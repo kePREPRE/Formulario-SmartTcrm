@@ -1,0 +1,97 @@
+{% extends 'includes/header.html' %}
+
+{% block title %}Editar Cliente{% endblock %}
+
+{% block content %}
+<style>
+    form {
+        margin-top: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+</style>
+
+<form id="formEditarCliente">
+     <input type="hidden" id="idCliente" name="idCliente" value="{{ cliente[0] }}">
+    <div class="row">
+        <div class="col-12" style="margin-bottom: 20px;">
+            <h4 class="card-title text-center fw-bold estilo">Formulario Editar Cliente</h4>
+        </div> <!-- end col -->
+        
+        <div class="col-md-6">
+            <div class="card card-body">
+                <div class="mb-3">
+                    <label class="form-label" for="txtNombreCli">Nombre Del Cliente</label>
+                    <input type="text" class="form-control form-control-lg" 
+                           id="txtNombreCli" name="txtNombreCli" value="{{ cliente[1] }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="txtCorreoCli">Correo Del Cliente</label>
+                    <input type="text" class="form-control form-control-lg" 
+                           id="txtCorreoCli" name="txtCorreoCli" value="{{ cliente[2] }}">
+                </div>      
+                
+                <div class="mb-3">  
+                    <label class="form-label" for="txtTelefonoCli">Telefono Del Cliente</label>
+                    <input type="number" class="form-control form-control-lg"  
+                           id="txtTelefonoCli" name="txtTelefonoCli" value="{{ cliente[3] }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card card-body">
+
+                <div class="mb-3">
+                    <label class="form-label" for="txtDireccionCli">Direccion Del Cliente</label>
+                    <input type="text" class="form-control form-control-lg" 
+                           id="txtDireccionCli" name="txtDireccionCli" value="{{ cliente[4] }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="slcProvincias">Provincia</label>
+                    <select class="form-control form-control-lg" id="slcProvincias" name="slcProvincias">
+                        <option value="">Seleccione una provincia</option>
+                        <option value="1">San José</option>
+                        <option value="2">Alajuela</option>
+                        <option value="3">Cartago</option>
+                        <option value="4">Heredia</option>
+                        <option value="5">Guanacaste</option>
+                        <option value="6">Puntarenas</option>
+                        <option value="7">Limón</option>
+                    </select>
+                </div>     
+                
+                <div class="mb-3">
+                    <label class="form-label" for="fecha">Fecha</label>
+                    <input type="date" class="form-control form-control-lg" id="fecha" 
+                           name="fecha" value="{{ cliente[6] | safe }}">
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</form>
+
+ <div style="width: 100%; text-align:center;">
+    <button id="btnActualizarCliente" type="button" class="btn btn-primary">
+        Actualizar Cliente
+    </button>
+
+</div>
+
+<!-- Librería SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Tu JS corregido -->
+<script src="{{ url_for('static', filename='assets/js/editar.js') }}"></script>
+
+
+
+
+{% endblock %}
+
+<!-- Script para enviar por JS con SweetAlert2 -->
+

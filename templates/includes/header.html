@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+    
+        <meta charset="utf-8">
+        <title>Inbox | Foxia - Responsive Bootstrap 5 Admin Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
+        <meta content="Themesbrand" name="author">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='/assets/images/favicon.ico') }}">
+    
+        <!-- Bootstrap Css -->
+        <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <!-- Icons Css -->
+        <link href="{{ url_for('static', filename='assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
+        <!-- App Css-->
+        <link href="{{ url_for('static', filename='assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        
+    
+    </head>
+<body data-sidebar="colored">
+
+    <style>
+        
+        .logo-container {
+        width: 240px;
+        height: 60px; /* Ajusta según tu necesidad */
+        background-color: #fff;
+        
+      
+       
+    }
+
+    .logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Usa 'cover' si quieres que se recorte un poco y llene todo */
+    }
+
+    .bg-purple-custom {
+    background-color: #27034F !important;   
+}
+
+    
+    </style>
+
+
+  
+    <div class="">
+                
+
+        <!-- Begin page -->
+        <div id="layout-wrapper" >
+
+            <header id="page-topbar">
+    <div class="d-flex">
+            <div class="logo-container">
+
+                <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="Logo">
+            </div>
+
+            <div class="d-flex ms-auto">
+                <!-- Search input -->
+                <div class="search-wrap" id="search-wrap">
+                    <div class="search-bar">
+                        <input class="search-input form-control" placeholder="Search">
+                        <a href="#" class="close-search toggle-search" data-target="#search-wrap">
+                            <i class="mdi mdi-close-circle"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown d-none d-md-block">
+                    <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="flag-img me-2" src="{{ url_for('static', filename='assets/images/flags/us_flag.jpg') }}" alt="Header Language" height="16"> English <i class="mdi mdi-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{{ url_for('static', filename='assets/images/flags/germany_flag.jpg') }}" alt="user-image" height="12"> <span class="align-middle"> German </span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{{ url_for('static', filename='assets/images/flags/italy_flag.jpg') }}" alt="user-image" height="12"> <span class="align-middle"> Italian </span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{{ url_for('static', filename='assets/images/flags/french_flag.jpg') }}" alt="user-image" height="12"> <span class="align-middle"> French </span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{{ url_for('static', filename='assets/images/flags/spain_flag.jpg') }}" alt="user-image" height="12"> <span class="align-middle"> Spanish </span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="{{ url_for('static', filename='assets/images/flags/russia_flag.jpg') }}" alt="user-image" height="12"> <span class="align-middle"> Russian </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" class="btn header-item toggle-search noti-icon waves-effect" data-target="#search-wrap">
+                        <i class="mdi mdi-magnify"></i>
+                    </button>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline"></i>
+                        <span class="badge bg-danger rounded-pill">3</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+                        <div class="p-3">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h5 class="m-0 font-size-16"> Notification (3) </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-simplebar style="max-height: 230px;">
+                            <a href="" class="text-reset notification-item d-block active">
+                                <div class="d-flex">
+                                    <div class="avatar-xs me-3">
+                                        <span class="avatar-title bg-success rounded-circle font-size-16">
+                                            <i class="mdi mdi-cart-outline"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h6 class="mt-0 font-size-15 mb-1">Your order is placed</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="" class="text-reset notification-item d-block">
+                                <div class="d-flex">
+                                    <div class="avatar-xs me-3">
+                                        <span class="avatar-title bg-danger rounded-circle font-size-16">
+                                            <i class="mdi mdi-message-text-outline"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h6 class="mt-0 font-size-15 mb-1">New Message received</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">You have 87 unread messages</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="" class="text-reset notification-item d-block">
+                                <div class="d-flex">
+                                    <div class="avatar-xs me-3">
+                                        <span class="avatar-title bg-info rounded-circle font-size-16">
+                                            <i class="mdi mdi-glass-cocktail"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h6 class="mt-0 font-size-15 mb-1">Your item is shipped</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">It is a long established fact that a reader will</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="text-reset notification-item d-block">
+                                <div class="d-flex">
+                                    <div class="avatar-xs me-3">
+                                        <span class="avatar-title bg-success rounded-circle font-size-16">
+                                            <i class="mdi mdi-message-text-outline"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h6 class="mt-0 font-size-15 mb-1">New Message received</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">You have 87 unread messages</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+    
+                            <a href="" class="text-reset notification-item d-block">
+                                <div class="d-flex">
+                                    <div class="avatar-xs me-3">
+                                        <span class="avatar-title bg-warning rounded-circle font-size-16">
+                                            <i class="mdi mdi-cart-outline"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h6 class="mt-0 font-size-15 mb-1">Your order is placed</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+    
+                        </div>
+                        
+                        <div class="p-2 border-top">
+                            <div class="d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-start" href="javascript:void(0)">
+                                    View all
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle header-profile-user me-2" src="{{ url_for('static', filename='assets/images/users/avatar-1.jpg') }}" alt="Header Avatar"> 
+                        <span class="d-none d-md-inline-block ms-1">Donald T. <i class="mdi mdi-chevron-down"></i> </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- item-->
+                        <a class="dropdown-item" href="#"><i class="dripicons-user font-size-16 align-middle d-inline-block me-1"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-wallet font-size-16 align-middle d-inline-block me-1"></i> My Wallet</a>
+                        <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i class="dripicons-gear font-size-16 align-middle me-1"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="dripicons-lock-open font-size-16 align-middle d-inline-block me-1"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><i class="dripicons-power-off font-size-16 align-middle me-1 text-danger"></i> Logout</a>
+                    </div>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                        <i class="mdi mdi-spin mdi-cog"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>    
+    </div>    
+</header>
+<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu bg-dark text-white" style="background-color: 
+
+#27034F;">
+
+    <div data-simplebar class="h-100" style="background-color: #27034F;">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu" >
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu" >
+                <li class="menu-title text-uppercase text-info fw-bold" >Menú Principal</li>
+
+               <li>
+                    <a href="/admin" class="waves-effect d-flex align-items-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-file-person-fill me-2" viewBox="0 0 16 16">
+                            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11"/>
+                        </svg>
+                        <span>Login</span>
+                    </a>
+                </li>
+
+               <!-- Módulo 1: Clientes -->
+            <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect d-flex align-items-center text-white">
+                    <!-- Icono de persona -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-lines-fill me-2 text-white" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+                    </svg>
+                    <span>Clientes</span>
+                </a>
+                <ul class="sub-menu bg-dark text-white" aria-expanded="false">
+                    <li>
+                        <a href="/insertarCliente" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+                            </svg> Agregar Cliente
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/listaCliente" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
+                                <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/>
+                                <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/>
+                            </svg> Lista de Clientes
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+               <!-- Módulo 2: Productos -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect d-flex align-items-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bar-chart-line me-2 text-white" viewBox="0 0 16 16">
+                            <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z"/>
+                        </svg>
+                        <span>Productos</span>
+                    </a>
+                    <ul class="sub-menu bg-secondary text-white" aria-expanded="false">
+                        <li>
+                            <a href="insertarP" class="text-white">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5"/>
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                            </svg> Agregar Producto</a>
+                        </li>
+
+                        <li>
+                            <a href="listaP" class="text-white">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                            </svg>Lista de Productos</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+               <!-- Módulo 3: Facturación -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect d-flex align-items-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-file-earmark-text me-2 text-white" viewBox="0 0 16 16">
+                            <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                            <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <span>Facturación</span>
+                    </a>
+                    <ul class="sub-menu bg-secondary text-white" aria-expanded="false">
+                        <li><a href="insertaF" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0"/>
+                            </svg>Crear Factura</a>
+                        </li>
+                        <li><a href="/listaF" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-zip" viewBox="0 0 16 16">
+                            <path d="M5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.11 0l-.929-.62a1 1 0 0 1-.415-1.074L5 8.438zm2 0H6v.938a1 1 0 0 1-.03.243l-.4 1.598.93.62.929-.62-.4-1.598A1 1 0 0 1 7 8.438z"/>
+                            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1h-2v1h-1v1h1v1h-1v1h1v1H6V5H5V4h1V3H5V2h1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                            </svg>Historial de Facturas</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <!-- Módulo 4: Reportes -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect d-flex align-items-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-file-earmark-arrow-down me-2 text-white" viewBox="0 0 16 16">
+                            <path d="M8.5 6.5a.5.5 0 0 0-1 0v3.793L6.354 9.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+                            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                        </svg>
+                        <span>Reportes</span>
+                    </a>
+                    <ul class="sub-menu bg-secondary text-white" aria-expanded="false">
+                        <li><a href="/reporte/facturas" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-zip" viewBox="0 0 16 16">
+                            <path d="M5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.11 0l-.929-.62a1 1 0 0 1-.415-1.074L5 8.438zm2 0H6v.938a1 1 0 0 1-.03.243l-.4 1.598.93.62.929-.62-.4-1.598A1 1 0 0 1 7 8.438z"/>
+                            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1h-2v1h-1v1h1v1h-1v1h1v1H6V5H5V4h1V3H5V2h1V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                            </svg> Historial de Facturas</a>
+                        </li>
+                        <li><a href="/reporte/cliente" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755"/>
+                            </svg> Facturas por Cliente</a>
+                        </li>
+                        <li><a href="/reporte/totales" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-code" viewBox="0 0 16 16">
+                            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                            <path d="M8.646 6.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 9 8.646 7.354a.5.5 0 0 1 0-.708m-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 9l1.647-1.646a.5.5 0 0 0 0-.708"/>
+                            </svg> Totales Acumulados</a>
+                        </li>
+                        <li><a href="/reporte/productos" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trophy" viewBox="0 0 16 16">
+                            <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"/>
+                            </svg> Top Productos</a>
+                        </li>
+                        <li><a href="/reporte/clientes" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                            <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+                            </svg> Top Clientes</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
+<!-- Left Sidebar End -->
+
+
+            
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+            {% block content %}
+            <!-- aquí va solo el contenido específico que cambia en cada página -->
+            {% endblock %}
+            </div>
+            <!-- end main content-->
+
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+                             
+        <!-- JAVASCRIPT -->
+        <script src="{{ url_for('static', filename='assets/libs/jquery/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/libs/metismenu/metisMenu.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/libs/simplebar/simplebar.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/libs/node-waves/waves.min.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        
+
+        
+         
+
+        <script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+    </div>
+</body>
+</html>

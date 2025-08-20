@@ -1,0 +1,107 @@
+{% extends 'includes/header.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+
+
+<style>
+    form{
+        margin-top: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+</style>
+
+    <form action="/insertar" method="POST" id="form">
+        <div class="row">
+            <div class="col-12" style="margin-bottom: 20px;">
+                <h4 class="card-title text-center fw-bold estilo" >Formulario Crear Cliente</h4>
+            </div> <!-- end col -->
+            
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="txtNombreCli">Nombre Del Cliente</label>
+                        <input type="text" class="form-control form-control-lg validacion campoInicial" id="txtNombreCli" value=" "  name="txtNombreCli" >
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="txtCorreoCli">Correo Del Cliente</label>
+                        <input type="text" class="form-control form-control-lg validacion" id="txtCorreoCli" value=" " name="txtCorreoCli" >
+                    </div>      
+                    
+                    <div class="mb-3">  
+                        <label class="form-label" for="txtTelefonoCli">Telefono Del Cliente</label>
+                        <input type="number" class="form-control form-control-lg validacion "  id="txtTelefonoCli" name="txtTelefonoCli" value="" placeholder="Digite El Telefono">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-body">
+
+                    <div class="mb-3">
+                        <label class="form-label" for="txtDireccionCli">Direccion Del Cliente</label>
+                        <input type="text" class="form-control form-control-lg validacion campoInicial" id="txtDireccionCli" value="" name="txtDireccionCli" placeholder="Digite La Direccion">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="slcProvincias">Provincia</label>
+                        <select class="form-control form-control-lg" id="slcProvincias" name="slcProvincias">
+                            <option value="">Seleccione una provincia</option>
+                            <option value="1">San José</option>
+                            <option value="2">Alajuela</option>
+                            <option value="3">Cartago</option>
+                            <option value="4">Heredia</option>
+                            <option value="5">Guanacaste</option>
+                            <option value="6">Puntarenas</option>
+                            <option value="7">Limón</option>
+                        </select>
+                    </div>     
+                    
+                    <div class="mb-3">
+                        <label class="form-label" for="fecha">Fecha</label>
+                        <input type="date" class="form-control form-control-lg" id="fecha" name="fecha" placeholder="Seleccione una fecha">
+                    </div>
+                    
+                </div>
+            </div>
+
+         <div style="width: 100%; text-align:center;">
+            <button id="btnCrearCliente" class="btn btn-primary w-md waves-effect waves-light">Guardar Cliente</button>
+        </div>
+        <!-- 
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boton = document.getElementById('btnCrearCliente');
+
+            if (boton) {
+                boton.addEventListener('click', (event) => {
+                    event.preventDefault(); // Evita envío inmediato si está en un formulario
+
+                    Swal.fire({
+                        icon: "success",
+                        title: "Éxito",
+                        text: "✅ Cliente insertado correctamente",
+                        timer: 3000,
+                        timerProgressBar: true,
+                        showConfirmButton: false
+                    }).then(() => {
+                        // Redirigir después de que termine la alerta
+                        window.location.href = "/listaCliente";
+                    });
+                });
+            }
+        });
+        </script>
+        -->
+
+
+       
+        </div>
+    </form>
+
+
+{% endblock %}

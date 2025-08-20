@@ -1,0 +1,124 @@
+{% extends 'includes/header.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+
+<style>
+    .container {
+        margin-top: 100px;
+    }
+    .carta {
+        margin-top: 40px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #listaProductosAgregados {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    .producto-card {
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .producto-card strong {
+        color: #333;
+        font-size: 16px;
+    }
+    .producto-card small {
+        font-size: 14px;
+        color: #555;
+    }
+    #totalesLista {
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+        margin-top: 10px;
+        font-size: 15px;
+        text-align: right;
+        display: none; /* Ocultos al inicio */
+    }
+    #totalesLista p {
+        margin: 2px 0;
+    }
+</style>
+
+<body>
+<div class="container">
+    <h4 class="text-center fw-bold estilo mb-4">
+        Formulario Crear Factura
+    </h4>
+    
+    <!-- Datos de factura -->
+    <div class="row">
+        <div class="col-md-6">
+            <label for="cliente">Seleccione un cliente:</label>
+            <select id="cliente" class="form-select">
+                <option value="">Seleccione un cliente</option>
+                {% for cliente in listaClientes %}
+                    <option value="{{ cliente[0] }}">{{ cliente[1] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" class="form-control">
+        </div>
+    </div>
+
+    <!-- Agregar productos -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-5">
+                    <label for="producto" class="form-label">Producto</label>
+                    <select id="producto" class="form-select">
+                        <option value="">Seleccione</option>
+                        {% for producto in listaProductos %}
+                            <option value="{{ producto[0] }}" data-precio="{{ producto[2] }}">
+                                {{ producto[1] }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="cantidad" class="form-label">Cantidad</label>
+                    <input type="number" id="cantidad" class="form-control" min="1" value="1">
+                </div>
+                <div class="col-md-5 d-flex gap-2">
+                    <button id="btnAgregar" class="btn btn-primary flex-fill">Agregar</button>
+                    <button id="btnEliminarTodo" class="btn btn-danger flex-fill">Eliminar Todo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de productos y totales -->
+    <div id="listaProductosAgregados">
+        <div id="totalesLista">
+            <p>Subtotal: ₡<span id="subtotal">0.00</span></p>
+            <p>Total Impuestos: ₡<span id="totalImpuesto">0.00</span></p>
+            <p><strong>Total General: ₡<span id="totalGeneral">0.00</span></strong></p>
+        </div>
+    </div>
+
+    <!-- Botón guardar -->
+    <div class="text-center mt-4">
+        <button id="btnGuardarFactura" class="btn btn-success">
+            Guardar Factura
+        </button>
+    </div>
+</div>
+
+<script id="detalle-json" type="application/json">
+    {{ listadetalleFactura | tojson }}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ url_for('static', filename='assets/js/factura.js') }}"></script>
+
+
+</body>
+{% endblock %}

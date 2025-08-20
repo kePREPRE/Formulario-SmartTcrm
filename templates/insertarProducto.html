@@ -1,0 +1,119 @@
+{% extends 'includes/header.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+
+
+<style>
+    form{
+        margin-top: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+</style>
+
+    <form action="insertarProducto" method="POST" id="formProducto" class="needs-validation" novalidate>
+  <div class="row justify-content-center text-center">
+    <div class="col-12 mb-3">
+      <h4 class="card-title fw-bold estilo" aria-label="Formulario Crear Producto" style="text-align:center;">
+        Formulario Crear Producto
+      </h4>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card card-body text-center">
+        <div class="mb-3">
+          <label class="form-label" for="txtNombrePro" style="width:100%; text-align: left;">Nombre Del Producto</label>
+          <input
+            type="text"
+            class="form-control form-control-lg validacion campoInicial mx-auto"
+            id="txtNombrePro"
+            name="txtNombrePro"
+            placeholder="Digite el nombre del producto"
+            required
+            style="max-width: 100%;"
+          >
+          <div class="invalid-feedback" style="width:100%;">
+            Por favor ingrese el nombre del producto.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="txtDescripcionPro" style="width:100%; text-align: left;">Descripción Del Producto</label>
+          <input
+            type="text"
+            class="form-control form-control-lg validacion mx-auto"
+            id="txtDescripcionPro"
+            name="txtDescripcionPro"
+            placeholder="Digite la descripción del producto"
+            required
+            style="max-width: 100%;"
+          >
+          <div class="invalid-feedback" style="width:100%;">
+            Por favor ingrese la descripción del producto.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="txtPrecioPro" style="width:100%; text-align: left;">Precio Del Producto</label>
+          <input
+            type="number"
+            class="form-control form-control-lg validacion mx-auto"
+            id="txtPrecioPro"
+            name="txtPrecioPro"
+            placeholder="Digite el precio del producto"
+            step="0.01"
+            min="0"
+            required
+            style="max-width:100%;"
+          >
+          <div class="invalid-feedback" style="width:100%;">
+            Por favor ingrese un precio válido.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <button type="submit" id="btnCrearProducto" class="btn btn-primary btn-lg">
+        Guardar Producto
+      </button>
+    </div>
+        <!-- 
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boton = document.getElementById('btnCrearCliente');
+
+            if (boton) {
+                boton.addEventListener('click', (event) => {
+                    event.preventDefault(); // Evita envío inmediato si está en un formulario
+
+                    Swal.fire({
+                        icon: "success",
+                        title: "Éxito",
+                        text: "✅ Cliente insertado correctamente",
+                        timer: 3000,
+                        timerProgressBar: true,
+                        showConfirmButton: false
+                    }).then(() => {
+                        // Redirigir después de que termine la alerta
+                        window.location.href = "/listaCliente";
+                    });
+                });
+            }
+        });
+        </script>
+        -->
+
+
+       
+        </div>
+    </form>
+
+
+{% endblock %}
