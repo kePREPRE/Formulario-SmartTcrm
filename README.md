@@ -1,49 +1,49 @@
-📑 ProyectoFinal – Aplicación Web con Flask y SQLite
+📑 ProyectoFinal – Web Application with Flask and SQLite
 
-Aplicación web desarrollada con Python 3 y el microframework Flask, enfocada en la gestión de datos mediante formularios y operaciones CRUD.
-Este proyecto busca mostrar buenas prácticas de desarrollo con un framework ligero y seguro, integrando funcionalidades esenciales que pueden servir como base para proyectos académicos, profesionales o empresariales.
+Web application developed with Python 3 and the Flask microframework, focused on data management through forms and CRUD operations.
+This project aims to demonstrate best development practices with a lightweight and secure framework, integrating essential functionalities that can serve as a foundation for academic, professional, or business projects.
 
-🌟 Objetivo del proyecto
+🌟 Project Objective
 
-El objetivo es implementar un sistema capaz de:
+The goal is to implement a system capable of:
 
-Capturar y almacenar información en una base de datos de manera estructurada y segura.
+Capturing and storing information in a database in a structured and secure way.
 
-Validar y gestionar registros mediante formularios dinámicos.
+Validating and managing records through dynamic forms.
 
-Ofrecer una interfaz moderna y adaptable con soporte para temas claros, oscuros y RTL.
+Providing a modern and adaptable interface with support for light, dark, and RTL themes.
 
-Servir como plantilla base para futuros proyectos de gestión de datos o sistemas web.
+Serving as a base template for future data management or web system projects.
 
-Este sistema también funciona como un ejemplo educativo para estudiantes o desarrolladores que quieran aprender a usar Flask y SQLite en proyectos reales.
+This system also works as an educational example for students or developers who want to learn how to use Flask and SQLite in real-world projects.
 
-🚀 Tecnologías principales
+🚀 Main Technologies
 
 Backend: Python 3, Flask
 
 Frontend: Bootstrap 5, HTML5, CSS3, JavaScript
 
-Base de datos: SQLite (DB.db)
+Database: SQLite (DB.db)
 
-Entorno de pruebas: VS Code con configuración .vscode
+Development Environment: VS Code with .vscode settings
 
-Control de versiones: Git y GitHub
+Version Control: Git and GitHub
 
-⚙️ Requisitos del sistema
+⚙️ System Requirements
 
-Python 3.9 o superior
+Python 3.9 or higher
 
-Dependencias instaladas vía pip:
+Dependencies installed via pip:
 
 flask
 
-sqlite3 (módulo estándar de Python)
+sqlite3 (Python standard module)
 
-Navegador web moderno (Chrome, Firefox, Edge)
+Modern web browser (Chrome, Firefox, Edge)
 
-Opcional: VS Code o cualquier IDE con soporte para Python
+Optional: VS Code or any IDE with Python support
 
-🔧 Instalación y configuración
-1️⃣ Clonar el repositorio
+🔧 Installation and Setup
+1️⃣ Clone the repository
 git clone https://github.com/usuario/ProyectoFinal.git
 cd ProyectoFinal
